@@ -42,6 +42,7 @@ machine = True
 
 
 while machine:
+    print(logo, info)
     order = input("What would you like? (espresso/latte/cappuccino):")
     if order == "espresso":
         espresso_water = MENU["espresso"]["ingredients"]["water"]
@@ -61,6 +62,8 @@ while machine:
                 money += price
                 water -= espresso_water
                 coffee -= espresso_coffee
+            else:
+                print("Sorry that's not enough money. Money refunded.")
 
         else:
             print("Sorry not enough resources for make this order.")
@@ -82,6 +85,8 @@ while machine:
                 water -= latte_water
                 milk -= latte_milk
                 coffee -= latte_coffee
+            else:
+                print("Sorry that's not enough money. Money refunded.")
         else:
             print("Sorry not enough resources for make this order.")
     elif order == "cappuccino":
@@ -102,6 +107,8 @@ while machine:
                 water -= cappuccino_water
                 milk -= cappuccino_milk
                 coffee -= cappuccino_coffee
+            else:
+                print("Sorry that's not enough money. Money refunded.")
         else:
             print("Sorry not enough resources for make this order.")
     # TODO: 2. Turn off the Coffee Machine by entering “off” to the prompt.
